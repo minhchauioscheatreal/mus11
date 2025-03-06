@@ -10,10 +10,50 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="https://img.upanh.tv/2025/03/05/IMG_4684.png" alt="IMG_4684.png">
     <title>Hacked by | MinhChau</title>
+    <style>
+        @keyframes rainbow {
+            0% { color: red; }
+            14% { color: orange; }
+            28% { color: yellow; }
+            42% { color: green; }
+            57% { color: blue; }
+            71% { color: indigo; }
+            85% { color: violet; }
+            100% { color: red; }
+        }
+        .rainbow-text {
+            animation: rainbow 2s infinite linear;
+        }
+        
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .loading {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid white;
+            border-top: 3px solid red;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-
-    <audio autoplay="true" id="lagu" loop="" src="https://jmp.sh/s/ROp0AUbnl8eWZ7GuKQG3"></audio>
+    <canvas id="spiderCanvas"></canvas>
+    
+    <audio id="lagu" loop src="https://jmp.sh/s/ROp0AUbnl8eWZ7GuKQG3"></audio>
 
     <table height="80%" width="100%">
         <tbody>
@@ -22,13 +62,13 @@
                     <center>
                         <br>
                         <div style="text-align: center; color: white;">
-                            <b>[!] Hacked By <font color="#ff0000"><i>@minhchauioscheat</i></font> [!]</b>
+                            <b>[!] Hacked By <font class="rainbow-text"><i>@minhchauioscheat</i></font> [!]</b>
                             <br>
-                            <span style="color: red;">Ồ... Bảo mật của bạn hỏng rồi!</span>
+                            <span style="color: red;">Ồ... Minh Chau tới chơi!</span>
                             <hr>
                         </div>
                         <font size="4" color="white">[ </font>
-                        <font size="4" color="white">Bỏ mẹ!! Trang web bạn bị xoá rồi <font color="red">@minhchauioscheat <font size="4" color="white"> ]</font>
+                        <font size="4" color="white">Config!! Accessibility Vip? <font class="rainbow-text">@minhchauioscheat <font size="4" color="white"> ]</font>
                         <br>
                         <font color="white" face="verdana" size="3">-=|</font>
                         <font face="verdana" color="white" style="text-shadow: white 0 0 10px ;" size="2">
@@ -41,11 +81,13 @@
                         <img alt="" src="https://i.gifer.com/PcUC.gif">
                         <hr>
                         <br>
-                        <b><span style="color: white;">Zalo Contact: 0386316282</br><i style="color: red;">{} <i style="color: white;"> @minhchauioscheat <i style="color: red;"> {} <i style="color: white;"> Intrustion Exploit <i style="color: red;"> {} <i style="color: white;"> CyberBAXV <i style="color: red;">{}</i></span></b><br>
-                        <b><span style="color: white;"></br>iLove: mchauloveiuu<i style="color: red;">Admin @minhchauioscheat </i></span></b><br>
+                        <b><span style="color: white;">Zalo Contact: 0386316282</br><i class="rainbow-text">{} <i style="color: white;"> @minhchauioscheat <i class="rainbow-text"> {} <i style="color: white;"> Intrustion Exploit <i class="rainbow-text"> {} <i style="color: white;"> CyberBAXV <i class="rainbow-text">{}</i></span></b><br>
+                        <b><span style="color: white;"></br>iLove: mchauloveiuu<i class="rainbow-text"> - Admin @minhchauioscheat </i></span></b><br>
                         <div class="control-buttons">
-                            <button class="glow-on-hover" type="button" onclick="document.getElementById('lagu').play()">Play Music</button>
-                            <button class="glow-on-hover" type="button" onclick="document.getElementById('lagu').pause()">Pause Music</button>
+                            <button class="toggle-music" onclick="toggleMusic()">
+                                <div class="loading" id="loading"></div>
+                                <span id="music-text">Play Music</span>
+                            </button>
                         </div>
                     </center>
                 </td>
@@ -53,17 +95,24 @@
         </tbody>
     </table>
 
-    <div class="troywell-avia"></div>
-    <div class="troywell-caa"></div>
-    <div class="__chii-hide__" style="display: none; position: absolute; pointer-events: none;">
-        <div style="position: absolute; box-sizing: border-box; z-index: 100000;"></div>
-        <div style="position: absolute; box-sizing: border-box; z-index: 100000;"></div>
-        <div style="position: absolute; box-sizing: border-box; z-index: 100000;"></div>
-        <div style="position: absolute; box-sizing: border-box; z-index: 100000;"></div>
-        <div style="position: absolute; box-sizing: border-box; z-index: 100000;"></div>
-        <div style="position: absolute; box-sizing: border-box; z-index: 100000;"></div>
-        <div style="position: absolute; box-sizing: border-box; z-index: 100000;"></div>
-    </div>
+    <script>
+        let isPlaying = false;
+        const audio = document.getElementById("lagu");
+        const musicText = document.getElementById("music-text");
+        const loading = document.getElementById("loading");
 
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                musicText.innerText = "Play Music";
+                loading.style.display = "none";
+            } else {
+                audio.play();
+                musicText.innerText = "Pause Music";
+                loading.style.display = "inline-block";
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
 </body>
 </html>
