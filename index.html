@@ -73,7 +73,7 @@
                         <font color="white" face="verdana" size="3">-=|</font>
                         <font face="verdana" color="white" style="text-shadow: white 0 0 10px ;" size="2">
                             <marquee scrollamount="6" behavior="alternate" width="50%">
-                                | We Are From Vietnamese 🇻🇳 |
+                                | I'am From Vietnamese 🇻🇳 |
                             </marquee>
                         </font>
                         <font color="white" face="verdana" size="3">|=-</font>
@@ -86,7 +86,7 @@
                         <div class="control-buttons">
                             <button class="toggle-music" onclick="toggleMusic()">
                                 <div class="loading" id="loading"></div>
-                                <span id="music-text">Play Music</span>
+                                <span id="music-text">Run Code</span>
                             </button>
                         </div>
                     </center>
@@ -104,11 +104,11 @@
         function toggleMusic() {
             if (isPlaying) {
                 audio.pause();
-                musicText.innerText = "Play Music";
+                musicText.innerText = "Run Code";
                 loading.style.display = "none";
             } else {
                 audio.play();
-                musicText.innerText = "Pause Music";
+                musicText.innerText = "Pause Config";
                 loading.style.display = "inline-block";
             }
             isPlaying = !isPlaying;
